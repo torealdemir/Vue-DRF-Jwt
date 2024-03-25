@@ -25,10 +25,13 @@ from rest_framework_simplejwt.views import (
 
 
 
+
 urlpatterns = [
     path('api/v1/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/v1/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/v1/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
+    path('api/v1/auth/', include('djoser.urls')),
+    path('api/v1/auth', include('djoser.urls.jwt')),
     # Other URL patterns for your app's views
     path('admin/', admin.site.urls),
     path('api/v1/ToCo', include('ToCo.urls')),
