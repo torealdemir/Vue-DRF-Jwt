@@ -12,3 +12,14 @@ export default {
   }
 }
 </script>
+
+<style>
+body{
+  background-color:rgb(rgb(107, 60, 60), green, blue);
+}
+
+img{
+ width: 40vw;
+ height: 70vh;
+}
+</style>
