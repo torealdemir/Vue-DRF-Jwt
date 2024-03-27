@@ -57,7 +57,7 @@ export default {
       }
 
       axios
-      .post('api/v1/token/refresh/', accessData)
+      .post('token/refresh/', accessData)
       .then(response => {
         const access = response.data.access
         localStorage.setItem('access', access)
