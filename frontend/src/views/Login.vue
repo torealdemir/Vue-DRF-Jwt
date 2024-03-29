@@ -1,7 +1,8 @@
 <template>
-    <h1>Login!</h1>
+   
     
     <div class="container-sm" >
+        <h1 class="d-flex justify-content-center my-4 text-success">Login!</h1>
         <div class="control">
             <form @submit.prevent="submitForm">
                 <div class="mb-3">
@@ -56,6 +57,7 @@ export default {
                     localStorage.setItem('refresh', refresh)
 
                     const user = this.$store.state.isAuthenticated
+                    this.$store.isAuthenticated = true
                     if(user){
                         this.$router.push('/')
                     }

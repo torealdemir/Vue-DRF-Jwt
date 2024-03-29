@@ -1,21 +1,27 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link>
-    <span> || </span>
-    <router-link to="/login">Login</router-link>
-    <span> || </span>
-    <router-link to="/signup">SignUp!</router-link>
-  </nav>
+  <div class="container">
+  
+  </div>
+
+  <Navbar/>
+   
   <router-view/>
+
+ 
+  
 
   
 </template>
 
 <script>
 import axios from 'axios'
+import Navbar from '@/components/Nav.vue'
 
 export default {
   name:'App',
+  components: {
+    Navbar,
+  },
 
   beforeCreate(){
     this.$store.commit('initializeStore')
@@ -72,7 +78,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -81,16 +87,4 @@ export default {
   color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 </style>

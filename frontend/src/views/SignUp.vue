@@ -84,4 +84,10 @@ export default{
 }
 </script>
 
+<style>
+button {
+    margin-bottom: 20px;
+}
+</style>
+
 <!-- //'api/v1/auth/' -->
