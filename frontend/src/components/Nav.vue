@@ -50,9 +50,8 @@ export default {
         localStorage.removeItem('access')
         localStorage.removeItem('refresh')
         localStorage.clear()
-
-        let x = this.$store.state.isAuthenticated
-        console.log(x)
+        this.$store.state.isAuthenticated= false
+        this.$router.push('/login')
         
       }
     }
