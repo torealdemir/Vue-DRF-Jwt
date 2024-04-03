@@ -1,35 +1,28 @@
 <template>
   <div class="container">
-  
+    <Navbar />
+    <router-view />
   </div>
-
-  <Navbar/>
-   
-  <router-view/>
-
- 
-  
-
-  
 </template>
 
 <script>
-import axios from 'axios'
-import Navbar from '@/components/Nav.vue'
+import axios from 'axios';
+import Navbar from '@/components/Nav.vue';
+import { mapState, mapActions } from 'vuex';
 
 export default {
-  name:'App',
+  name: 'App',
   components: {
     Navbar,
   },
 
-  beforeCreate(){
+  beforeCreate() {
     this.$store.commit('initializeStore')
     
     const access = this.$store.state.access
     const user = this.$store.state.isAuthenticated
 
-    if((access) && (user)){
+    if ((access) && (user)) {
       axios.defaults.headers.common['Authorization'] = 'JWT ' + access
     }
     else {
@@ -37,44 +30,44 @@ export default {
     }
   },
 
-  // mounted(){
-  //   const user = this.$store.state.isAuthenticated
-  //   if(user) {
-
-  //   }
-  // }
+  mounted(){
+    const user = this.$store.state.isAuthenticated
+    if(user){
+      setInterval(()=>{
+        this.getAccess()
+      }, 29000)
+    } else {
+      this.$router.push('/')
+    }
+  },
 
   methods: {
     logoutForm(e){
       this.$store.commit('removeAccess');
       localStorage.removeItem('access');
       localStorage.removeItem('refresh');
-      axios.defaults.headers.common['Authorization']=''
+      axios.defaults.headers.common['Authorization']= ''
       const user = this.$store.state.isAuthenticated
-
       if(!user){
-        this.$router.push('/login')
+        this.$router.push('/')
       }
     },
-
     getAccess(e){
       const accessData = {
         refresh: this.$store.state.refresh
       }
 
       axios
-      .post('token/refresh/', accessData)
-      .then(response => {
-        const access = response.data.access
-        localStorage.setItem('access', access)
-        this.$store.commit('setAccess', access)
-      })
-      .catch(error => {
-        console.log(error)
-      })
+          .post('/auth/jwt/refresh/', accessData)
+          .then(response => {
+            const access = response.data.access
+            localStorage.setItem('access', access)
+            this.$store.commit('setAccess', access)
+          }).catch(error => {
+            console.log(error)
+          })
     }
   }
-
 }
 </script>
 
@@ -86,5 +79,4 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-
 </style>

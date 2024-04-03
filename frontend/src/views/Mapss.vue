@@ -1,20 +1,19 @@
 <template>
-<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-  Toggle Collapse
-</button>
+<h1>Maps</h1>
 
-<div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    This is the content of the collapse element.
-  </div>
-</div>
-
-<h1>Maps1</h1>
+<div id="map"></div>
 </template>
 
 <script>
 export default{
 
-    name:'Mapss'
+    name:'Mapss',
+
+    
 }
 </script>
+<style>
+#map{
+    height: 220px;
+}
+</style>

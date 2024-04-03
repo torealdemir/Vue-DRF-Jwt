@@ -4,6 +4,7 @@ from .models import MainContent
 from .serializers import MainContentSerializer
 from rest_framework.response import Response
 from rest_framework import viewsets
+from rest_framework.viewsets import ModelViewSet
 
 
 # @api_view(['GET'])
@@ -12,6 +13,7 @@ from rest_framework import viewsets
 #     serializer = MainContentSerializer(Content)
 #     return Response(serializer.data)
 
-class ContentListViewSet(viewsets.ModelViewSet):
+class ContentListViewSet(ModelViewSet):
     queryset = MainContent
     serializer_class = MainContentSerializer
+    
