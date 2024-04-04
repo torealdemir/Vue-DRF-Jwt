@@ -24,8 +24,8 @@
       </template>
       <template v-else>
         <div class="navbar-nav ms-auto d-flex">
-          <router-link to="/login" class="btn btn-warning mx-2">Login!</router-link>
-          <router-link to="/signup" class="btn btn-primary mx-2">SignUp!</router-link>
+          <router-link to="/login" class="btn btn-warning mx-2 my-2">Login!</router-link>
+          <router-link to="/signup" class="btn btn-primary my-2 mx-2">SignUp!</router-link>
         </div>
       </template>
     </div>

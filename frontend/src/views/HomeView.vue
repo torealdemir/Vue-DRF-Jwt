@@ -6,8 +6,8 @@
     <div class="position-relative">
       <img src="https://images.unsplash.com/photo-1569852741721-ee5a94bf719e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid shadow-lg rounded shadow-img" alt="Fluid Image">
       <div class="position-absolute top-50 start-50 translate-middle">
-        <div class="bg-translucent p-3 shadow-lg rounded">
-          <h1 class="mb-3 text-white fs-1">Odtu Metalurji Malzeme</h1>
+        <div class="">
+          <h1 class="mb-3 text-dark fs-1">Odtu Metalurji Malzeme</h1>
           <h5 class="mb-4 text-white fs-2">Nano Materials Field</h5>
         </div>
       </div>
@@ -35,19 +35,25 @@
           </div>
         </div>
 
-        <div class="col-md-6 gx-5 mb-4">
-          <h4><strong>Facilis consequatur eligendi</strong></h4>
-          <p class="text-muted">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur
-            eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum
-            sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.
-          </p>
-          <p><strong>Doloremque vero ex debitis veritatis?</strong></p>
-          <p class="text-muted">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod itaque voluptate
-            nesciunt laborum incidunt. Officia, quam consectetur. Earum eligendi aliquam illum
-            alias, unde optio accusantium soluta, iusto molestiae adipisci et?
-          </p>
+        <div class="col-md-6 gx-5 mb-4 d-flex align-items-center">
+          <div class="">
+            <h4><strong>Facilis consequatur eligendi</strong></h4>
+            <p class="text-muted">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur
+              eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum
+              sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.
+            </p>
+          </div>
+          <div class="mx-3">
+            <h4><strong>Doloremque vero ex debitis veritatis?</strong></h4>
+            <p class="text-muted">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod itaque voluptate
+              nesciunt laborum incidunt. Officia, quam consectetur. Earum eligendi aliquam illum
+              alias, unde optio accusantium soluta, iusto molestiae adipisci et?
+            </p>
+          </div>
+          
+          
         </div>
       </div>
     </section>
@@ -161,6 +167,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Workbench:BLED@20&display=swap')
 
 </style>
