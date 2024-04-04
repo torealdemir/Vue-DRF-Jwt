@@ -1,10 +1,10 @@
 <template>
-  <nav class="navbar navbar-expand-md bg-light">
+  <nav class="navbar navbar-expand-md bg-dark">
     <router-link to="/" class="navbar-brand fs-3 ms-3 text-secondary">Home</router-link>
     <span> || </span>
-    <router-link to="/maps" class="nav-link mx-3 fs-4">Maps</router-link>
+    <router-link to="/maps" class="nav-link mx-3 fs-4 text-secondary">Maps</router-link>
     <span> || </span>
-    <router-link to="/pictures" class="nav-link mx-3 fs-4">Pictures!</router-link>
+    <router-link to="/pictures" class="nav-link mx-3 fs-4 text-secondary">Pictures!</router-link>
 
     <button class="navbar-toggler d-flex ms-auto text-warning m-3 d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#btn">
       <i class="bi bi-body-text">=</i>

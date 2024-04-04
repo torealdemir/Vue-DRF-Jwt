@@ -1,9 +1,9 @@
 <template>
-  <div class="container bg-image">
+  <div class="bg-image"> 
     <Navbar />
   </div>
-    <router-view />
-
+  <router-view />
+  
 </template>
 
 <script>
@@ -81,7 +81,11 @@ export default {
   color: #2c3e50;
 }
 
-.bg-image {
-  background-image: url('https://images.pexels.com/photos/1054201/pexels-photo-1054201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+
+
+img{
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 </style>

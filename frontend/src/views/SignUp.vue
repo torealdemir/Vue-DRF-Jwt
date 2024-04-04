@@ -1,5 +1,5 @@
 <template>
-    <h1>SignUp!</h1>
+    <h1 class="d-flex justify-content-center my-4 text-success">SignUp!</h1>
 
     <div class="container-sm" >
         <div class="control">
