@@ -4,11 +4,11 @@
   <!-- Background image -->
   <div id="intro" class="bg-image shadow-2-strong">
     <div class="position-relative">
-      <img src="https://images.unsplash.com/photo-1569852741721-ee5a94bf719e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid shadow-lg rounded shadow-img" alt="Fluid Image">
+      <img src="https://images.unsplash.com/photo-1569852741721-ee5a94bf719e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="mainImage img-fluid shadow-lg rounded shadow-img" alt="Fluid Image">
       <div class="position-absolute top-50 start-50 translate-middle">
         <div class="">
-          <h1 class="mb-3 text-dark fs-1">Odtu Metalurji Malzeme</h1>
-          <h5 class="mb-4 text-white fs-2">Nano Materials Field</h5>
+          <h1 class="headers mb-3">Odtu Metalurji ve Malzeme Bolumu</h1>
+          <h5 class="headers mb-4">Nano Materials Field</h5>
         </div>
       </div>
       <hr class="my-5" />
@@ -167,7 +167,20 @@ export default {
 }
 </script>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Workbench:BLED@20&display=swap')
+<style scoped>
+body {
+  font-family: "KoHo", sans-serif;
+}
+
+.headers {
+  font-size: 5.5rem;
+  color: rgb(157, 168, 168);
+}
+
+
+.mainImage{
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+}
 
 </style>
