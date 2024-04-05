@@ -7,8 +7,8 @@
       <img src="https://images.unsplash.com/photo-1569852741721-ee5a94bf719e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="mainImage img-fluid shadow-lg rounded shadow-img" alt="Fluid Image">
       <div class="position-absolute top-50 start-50 translate-middle">
         <div class="">
-          <h1 class="headers mb-3">Odtu Metalurji ve Malzeme Bolumu</h1>
-          <h5 class="headers mb-4">Nano Materials Field</h5>
+          <h1 class="headers mb-3 text-secondary ">Odtu Metalurji ve Malzeme Bolumu</h1>
+          <h5 class="headers mb-4 text-secondary ">Nano Materials Field</h5>
         </div>
       </div>
       <hr class="my-5" />
@@ -26,7 +26,7 @@
     <!--Section: Content-->
     <section>
       <div class="row">
-        <div class="col-md-6 gx-5 mb-4">
+        <div class="col-md-6 col-sm-8 mb-4">
           <div class="bg-image hover-overlay shadow-2-strong" data-mdb-ripple-init data-mdb-ripple-color="light">
             <img src="https://plus.unsplash.com/premium_photo-1664036937272-6ae6080d2d51?q=80&w=1950&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid rounded" />
             <a href="#!">
@@ -35,7 +35,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 gx-5 mb-4 d-flex align-items-center">
+        <div class="col-md-6 col-sm-8 mr-3 mb-4 d-flex align-items-center">
           <div class="">
             <h4><strong>Facilis consequatur eligendi</strong></h4>
             <p class="text-muted">
@@ -126,12 +126,22 @@
     </section>
     <!--Section: Content-->
 
-    <hr class="my-5" />
-
-   
+    <hr class="my-5" />   
   </div>
 </main>
-<!--Main layout-->
+
+<!--Footer-->
+<footer class="bg-dark">
+  <div class="py-4 text-center text-secondary">
+    <span>All Rights Reserved @Metu Engineering Section</span>
+    <div class="py-4 text-center">
+      <button class="btn btn-success mx-3">Contact Us</button>
+      <button class="btn btn-success mx-3">Our Adress</button>
+      <button class="btn btn-success mx-3">Our Staff</button>
+    </div>
+  </div>
+
+</footer>
 
 </template>
 <script>
@@ -173,10 +183,8 @@ body {
 }
 
 .headers {
-  font-size: 5.5rem;
-  color: rgb(157, 168, 168);
+  font-size: 3.5vw;
 }
-
 
 .mainImage{
   filter: blur(4px);
