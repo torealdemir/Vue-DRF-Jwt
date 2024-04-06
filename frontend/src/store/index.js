@@ -4,7 +4,8 @@ export default createStore({
   state: {
     access:'',
     refresh:'',
-    isAuthenticated: false
+    isAuthenticated: false,
+    isDarkMode: false,
   },
   getters: {
   },
@@ -20,6 +21,10 @@ export default createStore({
         state.isAuthenticated = false
       }
     },
+    setDarkMode(state, value) {
+      state.isDarkMode = value;
+    },
+
     setAccess(state, access){
       state.access = access
       state.isAuthenticated = true

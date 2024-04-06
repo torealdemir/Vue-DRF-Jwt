@@ -1,5 +1,5 @@
 <template>
-    <h1>PhotoS!</h1>
+    <h1>Projects!</h1>
 </template>
 
 <script>
