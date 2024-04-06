@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-image"> 
+  <div class="MainApp"> 
     <Navbar />
   </div>
   <router-view />
@@ -81,11 +81,4 @@ export default {
   color: #2c3e50;
 }
 
-
-
-img{
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-}
 </style>

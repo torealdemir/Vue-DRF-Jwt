@@ -11,7 +11,11 @@
           <h5 class="headers mb-4 text-secondary ">Nano Materials Field</h5>
         </div>
       </div>
-      <hr class="my-5" />
+      <div class="cutter d-flex align-items-center justify-content-center" :class="{'bg-dark': isDarkMode, 'bg-light': !isDarkMode}" >
+      <div class="cutterin" :class="{'bg-light': isDarkMode, 'bg-dark': !isDarkMode}">
+
+        </div>
+      </div>
     </div>
 
   </div>
@@ -21,7 +25,7 @@
 
 
 <!--Main layout-->
-<main class="mt-5">
+<main class="" :class="{'bg-dark' : isDarkMode,}">
   <div class="container">
     <!--Section: Content-->
     <section>
@@ -37,16 +41,16 @@
 
         <div class="col-md-6 col-sm-8 mr-3 mb-4 d-flex align-items-center">
           <div class="">
-            <h4><strong>Facilis consequatur eligendi</strong></h4>
-            <p class="text-muted">
+            <h4 :class="{'text-secondary' : isDarkMode}"><strong>Facilis consequatur eligendi</strong></h4>
+            <p :class="{'text-secondary' : isDarkMode}">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur
               eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum
               sapiente illo possimus, commodi dignissimos obcaecati illum maiores corporis.
             </p>
           </div>
           <div class="mx-3">
-            <h4><strong>Doloremque vero ex debitis veritatis?</strong></h4>
-            <p class="text-muted">
+            <h4 :class="{'text-secondary' : isDarkMode}"><strong>Doloremque vero ex debitis veritatis?</strong></h4>
+            <p :class="{'text-secondary' : isDarkMode}">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod itaque voluptate
               nesciunt laborum incidunt. Officia, quam consectetur. Earum eligendi aliquam illum
               alias, unde optio accusantium soluta, iusto molestiae adipisci et?
@@ -59,11 +63,14 @@
     </section>
     <!--Section: Content-->
 
-    <hr class="my-5" />
+    <div class="cutter d-flex align-items-center justify-content-center" :class="{'bg-dark': isDarkMode, 'bg-light': !isDarkMode}" >
+      <div class="cutterin" :class="{'bg-light': isDarkMode, 'bg-dark': !isDarkMode}">
 
+        </div>
+      </div>
     <!--Section: Content-->
     <section class="text-center">
-      <h4 class="mb-5"><strong>Facilis consequatur eligendi</strong></h4>
+      <h4 class="mb-5" :class="{'text-secondary' : isDarkMode}"><strong>Facilis consequatur eligendi</strong></h4>
 
       <div class="row">
         <div class="col-lg-4 col-md-12 mb-4">
@@ -126,7 +133,11 @@
     </section>
     <!--Section: Content-->
 
-    <hr class="my-5" />   
+    <div class="cutter d-flex align-items-center justify-content-center" :class="{'bg-dark': isDarkMode, 'bg-light': !isDarkMode}" >
+      <div class="cutterin" :class="{'bg-light': isDarkMode, 'bg-dark': !isDarkMode}">
+
+        </div>
+      </div>  
   </div>
 </main>
 
@@ -154,6 +165,16 @@ export default {
       contents: []
     };
   },
+  computed : {
+      isDarkMode: {
+        get() {
+          return this.$store.state.isDarkMode
+        },
+        set(value){
+          this.$store.commit('setDarkMode', value);
+        }
+      }
+    },
   methods: {
     loadContent() {
       const accessToken = localStorage.getItem('access');
@@ -173,6 +194,9 @@ export default {
           console.log(error);
         });
     },
+    toggleTheme(){
+        this.isDarkMode = event.target.checked
+      },
   }
 }
 </script>
@@ -191,4 +215,13 @@ body {
   -webkit-filter: blur(4px);
 }
 
+
+.cutter {
+  height: 8vh;
+}
+
+.cutterin{
+  height: 0.03vh;
+  width: 75vw;
+}
 </style>
