@@ -28,15 +28,18 @@
           <router-link to="/signup" class="btn btn-primary my-2 mx-2">SignUp!</router-link>
         </div>
       </template>
-      <div class="switch">
-        <input
-          type="checkbox"
-          id="themeSwitch"
-          class="switch-checkbox"
-          v-model="isDarkMode"
-        />
-      <label for="themeSwitch" class="switch-label"></label>
+      <div class="d-flex align-items-center justify-content-center mt-2">
+        <div class="switch">
+          <input
+            type="checkbox"
+            id="themeSwitch"
+            class="switch-checkbox"
+            v-model="isDarkMode"
+          />
+        <label for="themeSwitch" class="switch-label"></label>
      </div>
+      </div>
+     
     </div>
   </nav>
 </template>

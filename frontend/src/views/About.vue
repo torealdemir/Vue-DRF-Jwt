@@ -7,6 +7,31 @@
     </div>
 </div>
 
+
+<footer class="bg-dark">
+  <div class="container py-4 text-center text-secondary">
+    <span>All Rights Reserved @Metu Engineering Section</span>
+    <div class="row py-6 mt-3">
+      <ul>
+        <li>
+          <p>Adress:Odtu Engineering Section Material Engineering</p>
+        </li>
+        <li>
+          <a href="#">Contact Us!</a>
+        </li>
+      </ul>
+     
+    </div>
+    <div>
+      <div class="social-links">
+  	 				<a href="#"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="#"><i class="fab fa-twitter"></i></a>
+  	 				<a href="#"><i class="fab fa-instagram"></i></a>
+  	 				<a href="#"><i class="fab fa-linkedin-in"></i></a>
+  	 			</div>
+    </div>
+  </div>
+</footer>
 </template>
 
 <script>
@@ -22,7 +47,5 @@ export default{
     width: 100%;
 }
 
-footer {
-    height: 10vh;
-}
+
 </style>
