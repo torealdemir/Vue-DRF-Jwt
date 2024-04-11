@@ -1,6 +1,7 @@
 <template>
   <div class="MainApp"> 
     <Navbar />
+    <Footer/>
   </div>
   <router-view />
   
@@ -9,7 +10,9 @@
 <script>
 import axios from 'axios';
 import Navbar from '@/components/Nav.vue';
-import { mapState, mapActions } from 'vuex';
+
+
+
 
 export default {
   name: 'App',
@@ -36,7 +39,7 @@ export default {
     if(user){
       setInterval(()=>{
         this.getAccess()
-      }, 29000)
+      }, 19900)
     } else {
       this.$router.push('/')
     }
@@ -79,6 +82,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  margin-bottom: 20vh;
 }
+
 
 </style>

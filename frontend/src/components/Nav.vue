@@ -2,9 +2,9 @@
   <nav class="navbar navbar-expand-md" :class="{'navbar-dark' :isDarkMode, 'bg-dark' : isDarkMode, 'navbar-light': !isDarkMode}">
     <router-link to="/" class="navbar-brand fs-3 ms-3 text-secondary">Home</router-link>
     <span> || </span>
-    <router-link to="/maps" class="nav-link mx-3 fs-4 text-secondary">About</router-link>
+    <router-link to="/about" class="nav-link mx-3 fs-4 text-secondary">About</router-link>
     <span> || </span>
-    <router-link to="/pictures" class="nav-link mx-3 fs-4 text-secondary">Projects</router-link>
+    <router-link to="/projects" class="nav-link mx-3 fs-4 text-secondary">Projects</router-link>
 
     <button class="navbar-toggler d-flex ms-auto text-warning m-3 d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#btn">
       <i class="bi bi-body-text">=</i>
