@@ -5,6 +5,7 @@ from .serializers import MainContentSerializer
 from rest_framework.response import Response
 from rest_framework import viewsets
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.parsers import MultiPartParser, FormParser
 
 
 # @api_view(['GET'])
@@ -16,4 +17,5 @@ from rest_framework.viewsets import ModelViewSet
 class ContentListViewSet(ModelViewSet):
     queryset = MainContent
     serializer_class = MainContentSerializer
+    parser_classes = [MultiPartParser, FormParser]
     
