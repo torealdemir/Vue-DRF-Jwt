@@ -236,4 +236,8 @@ height: 8vh;
 height: 0.03vh;
 width: 75vw;
 }
+
+li{
+  list-style: none;
+}
 </style>
