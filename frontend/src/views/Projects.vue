@@ -10,28 +10,33 @@
                 </div>
                 <div class="mb-3">
                     <label for="project-description" class="form-label">Description</label>
-                    <input type="password" class="form-control" id="project-description">
+                    <input type="text" class="form-control" id="project-description">
                 </div>
                 <div class="mb-3">
                     <label for="short-description" class="form-label">Short Description</label>
-                    <input type="password" class="form-control" id="short-description">
+                    <input type="text" class="form-control" id="short-description">
                 </div>
                 <div class="mb-3">
-                    <label for="short-description" class="form-label">Active Students</label>
-                    <input type="password" class="form-control" id="short-description">
+                    <label for="project-students" class="form-label">Active Students</label>
+                    <input type="text" class="form-control" id="project-students">
                 </div>
-                <div class="mb-3">
-                    <label for="short-description" class="form-label">Project Status</label>
-                    <input type="password" class="form-control" id="short-description">
+                <div class="my-4">
+                    <label for="status">Choose a status:</label>
+
+                    <select name="status" id="status" class="mx-3">
+                    <option value="active">Active</option>
+                    <option value="passive">Passive</option>
+
+                    </select>
+
                 </div>
-
-
+               
                 <div class="mb-3">
                     <label for="project-img" class="form-label">Image</label>
                     <input type="file" class="form-control" id="project-img">
                 </div>
                
-                <div class="d-flex align-items-center justify-content-center my-3">
+                <div class="d-flex align-items-center justify-content-center my-4">
                     <button type="submit" class="btn btn-primary align-items-center">Submit</button>
                 </div>
                 
