@@ -140,7 +140,7 @@
 </div>
 </main>
 <footer class="bg-dark">
-  <div class="container py-4 text-center text-secondary">
+  <div class="container py-4 text-center text-secondary"> // status:null,
     <span>All Rights Reserved @Metu Engineering Section</span>
     <div class="row py-6 mt-3">
       <ul>

@@ -20,7 +20,7 @@
                     <label for="project-students" class="form-label">Active Students</label>
                     <input type="text" v-model="project.students" class="form-control" id="project-students">
                 </div>
-                <div class="my-4">
+                <!-- <div class="my-4">
                     <label for="status">Choose a status:</label>
 
                     <select v-model="project.status" name="status" id="status" class="mx-3">
@@ -29,7 +29,7 @@
 
                     </select>
 
-                </div>
+                </div> -->
                
                 <div class="mb-3">
                     <label for="project-img" class="form-label">Image</label>
@@ -64,6 +64,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
     name:'Projects',
     data(){
@@ -74,23 +75,46 @@ export default {
                 short_description:'',
                 image:null,
                 students:'',
-                status:null,
+                // status:null,
             }
         }
     },
     methods: {
     async submitForm(){
         const token = localStorage.getItem('access')
-        const formData = new formData();
+        const formData = new FormData();
 
         formData.append('title', this.project.title);
         formData.append('content', this.project.content);
         formData.append('short_description', this.project.short_description);
         formData.append('students', this.project.students);
         formData.append('image', this.project.image);
+
+        try {
+            const response = await axios.post('Toco/', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                    Authorization: `JWT ${token}`,
+                },
+            });
+            console.log(formData)
+            this.project.title = '';
+            this.project.content = '';
+            this.project.short_description='';
+            this.project.image=null;
+            this.project.students='';
+
+            alert('Project added!');
+
+        }catch (error){
+        console.log(error);
     }
+},
+handleImageUpload(event){
+    const file = event.target.files[0];
+    this.blog.image=file;
 }
-}
+    }}
 
 
 
