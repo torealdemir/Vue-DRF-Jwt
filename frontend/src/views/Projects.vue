@@ -6,26 +6,26 @@
             <form @submit.prevent="submitForm">
                 <div class="mb-3">
                     <label for="project-name" class="form-label">Project Name</label>
-                    <input type="text" class="form-control" id="project-name">
+                    <input type="text" v-model="project.title" class="form-control" id="project-name">
                 </div>
                 <div class="mb-3">
                     <label for="project-description" class="form-label">Description</label>
-                    <input type="text" class="form-control" id="project-description">
+                    <input type="text" v-model="project.content" class="form-control" id="project-description">
                 </div>
                 <div class="mb-3">
                     <label for="short-description" class="form-label">Short Description</label>
-                    <input type="text" class="form-control" id="short-description">
+                    <input type="text" v-model="project.image" class="form-control" id="short-description">
                 </div>
                 <div class="mb-3">
                     <label for="project-students" class="form-label">Active Students</label>
-                    <input type="text" class="form-control" id="project-students">
+                    <input type="text" v-model="project.students" class="form-control" id="project-students">
                 </div>
                 <div class="my-4">
                     <label for="status">Choose a status:</label>
 
-                    <select name="status" id="status" class="mx-3">
-                    <option value="active">Active</option>
-                    <option value="passive">Passive</option>
+                    <select v-model="project.status" name="status" id="status" class="mx-3">
+                    <option value="true">Active</option>
+                    <option value="false">Passive</option>
 
                     </select>
 
@@ -66,7 +66,33 @@
 <script>
 export default {
     name:'Projects',
+    data(){
+        return {
+            project: {
+                title:'',
+                content:'',
+                short_description:'',
+                image:null,
+                students:'',
+                status:null,
+            }
+        }
+    },
+    methods: {
+    async submitForm(){
+        const token = localStorage.getItem('access')
+        const formData = new formData();
+
+        formData.append('title', this.project.title);
+        formData.append('content', this.project.content);
+        formData.append('short_description', this.project.short_description);
+        formData.append('students', this.project.students);
+        formData.append('image', this.project.image);
+    }
 }
+}
+
+
 
 </script>
 

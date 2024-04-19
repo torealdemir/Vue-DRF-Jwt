@@ -9,7 +9,7 @@ class MainContent(models.Model):
     created_at = models.DateField(auto_now_add=True,null=True)
     updated_at = models.DateField(auto_now=True)
     image = models.ImageField(upload_to='images/', blank=True, null=True)
-    active_students = models.CharField(max_length=255)
+    active_students = models.CharField(max_length=255, null=True)
     is_project_active = models.BooleanField(default=True, null=True)
 
     def __str__(self):
