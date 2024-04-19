@@ -6,21 +6,56 @@
             <form @submit.prevent="submitForm">
                 <div class="mb-3">
                     <label for="project-name" class="form-label">Project Name</label>
-                    <input type="text" v-model="username" class="form-control" id="project-name">
+                    <input type="text" class="form-control" id="project-name">
                 </div>
                 <div class="mb-3">
                     <label for="project-description" class="form-label">Description</label>
-                    <input type="password" v-model="password" class="form-control" id="project-description">
+                    <input type="password" class="form-control" id="project-description">
                 </div>
                 <div class="mb-3">
                     <label for="short-description" class="form-label">Short Description</label>
-                    <input type="password" v-model="repassword" class="form-control" id="short-description">
+                    <input type="password" class="form-control" id="short-description">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="mb-3">
+                    <label for="short-description" class="form-label">Active Students</label>
+                    <input type="password" class="form-control" id="short-description">
+                </div>
+                <div class="mb-3">
+                    <label for="short-description" class="form-label">Project Status</label>
+                    <input type="password" class="form-control" id="short-description">
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="project-img" class="form-label">Image</label>
+                    <input type="file" class="form-control" id="project-img">
+                </div>
+               
+                <div class="d-flex align-items-center justify-content-center my-3">
+                    <button type="submit" class="btn btn-primary align-items-center">Submit</button>
+                </div>
+                
             </form>
         </div>
     </div>
-
+    <footer class="bg-dark">
+        <div class="container py-4 text-center text-secondary">
+            <span>All Rights Reserved @Metu Engineering Section</span>
+            <div class="row py-6 mt-3">
+            <ul>
+                <li>
+                <p>Adress:Odtu Engineering Section Material Engineering</p>
+                </li>
+                <li>
+                <a href="#">Contact Us!</a>
+                </li>
+            </ul>
+            
+            </div>
+            <div>
+            </div>
+        </div>
+</footer>
 </template>
 
 <script>
@@ -33,5 +68,9 @@ export default {
 <style>
 li {
     list-style:none;
+}
+
+li {
+    list-style: none;
 }
 </style>
