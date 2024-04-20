@@ -91,7 +91,7 @@ export default {
         formData.append('image', this.project.image);
 
         try {
-            const response = await axios.post('Toco/', formData, {
+            const response = await axios.post('ToCo/addproject/', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `JWT ${token}`,
