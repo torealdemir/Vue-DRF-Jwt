@@ -22,7 +22,7 @@ class ContentListViewSet(ModelViewSet):
 
 
 class ProjectCreateApiView(generics.ListCreateAPIView):
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
     parser_classes = [MultiPartParser, FormParser]
 
     def post(self, request):
