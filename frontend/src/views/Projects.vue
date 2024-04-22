@@ -98,12 +98,12 @@ export default {
                     Authorization: `JWT ${token}`,
                 },
             });
-            console.log(formData)
-            this.project.title = '';
-            this.project.content = '';
-            this.project.short_description='';
-            this.project.image=null;
-            this.project.students='';
+            // console.log(formData)
+            // this.project.title = '';
+            // this.project.content = '';
+            // this.project.short_description='';
+            // this.project.image=null;
+            // this.project.students='';
 
             alert('Project added!');
 
