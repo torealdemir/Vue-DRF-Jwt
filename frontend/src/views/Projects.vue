@@ -92,7 +92,7 @@ export default {
 
         try {
             console.log(formData)
-            const response = await axios.post('ToCo/', formData, {
+            const response = await axios.post('ToCo/addproject/', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `JWT ${token}`,
