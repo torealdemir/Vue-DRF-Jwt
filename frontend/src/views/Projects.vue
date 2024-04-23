@@ -33,7 +33,7 @@
                
                 <div class="mb-3">
                     <label for="project-img" class="form-label">Image</label>
-                    <input type="file" class="form-control" id="project-img">
+                    <input type="file" class="form-control" v-on:change="handleImageUpload" id="project-img">
                 </div>
                
                 <div class="d-flex align-items-center justify-content-center my-4">
@@ -65,68 +65,56 @@
 
 <script>
 import axios from 'axios';
+
 export default {
-    name:'Projects',
-    data(){
-        return {
-            project: {
-                title:'',
-                content:'',
-                short_description:'',
-                image:null,
-                students:'',
-                // status:null,
-            }
-        }
+  name: 'Projects',
+  data() {
+    return {
+      project: {
+        title: '',
+        content: '',
+        short_description: '',
+        image: null,
+        students: '',
+      },
+    };
+  },
+  methods: {
+    async submitForm() {
+      const token = localStorage.getItem('access');
+      const formData = new FormData();
+    
+      formData.append('title', this.project.title);
+      formData.append('content', this.project.content);
+      formData.append('short_description', this.project.short_description);
+      formData.append('students', this.project.students);
+      formData.append('image', this.project.image);
+
+      try {
+        const response = await axios.post('ToCo/addproject/', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            Authorization: `JWT ${token}`,
+          },
+        });
+
+        console.log(response.data); // Log the response data
+        alert('Project added!');
+      } catch (error) {
+        console.log(error); // Log any error details
+        alert('Failed to add project.');
+      }
     },
-    methods: {
-    async submitForm(){
-        const token = localStorage.getItem('access')
-        const formData = new FormData();
-
-        formData.append('title', this.project.title);
-        formData.append('content', this.project.content);
-        formData.append('short_description', this.project.short_description);
-        formData.append('students', this.project.students);
-        formData.append('image', this.project.image);
-
-        try {
-            console.log(formData)
-            const response = await axios.post('ToCo/addproject/', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                    Authorization: `JWT ${token}`,
-                },
-            });
-            // console.log(formData)
-            // this.project.title = '';
-            // this.project.content = '';
-            // this.project.short_description='';
-            // this.project.image=null;
-            // this.project.students='';
-
-            alert('Project added!');
-
-        }catch (error){
-        console.log(error);
-    }
-},
-handleImageUpload(event){
-    const file = event.target.files[0];
-    this.blog.image=file;
-}
-    }}
-
-
-
+    handleImageUpload(event) {
+      const file = event.target.files[0];
+      this.project.image = file;
+    },
+  },
+};
 </script>
-
 <style>
 li {
     list-style:none;
 }
 
-li {
-    list-style: none;
-}
 </style>

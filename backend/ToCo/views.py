@@ -1,34 +1,44 @@
-from .models import MainContent
-from .serializers import MainContentSerializer, ProjectListCreateSerializer
 from rest_framework.response import Response
+from rest_framework.decorators import api_view
+
+from .serializers import ProjectListCreateSerializer, MainContentSerializer
+
+from .models import MainContent
+
 from rest_framework import viewsets
-from rest_framework.viewsets import ModelViewSet
-from rest_framework.parsers import MultiPartParser, FormParser
-from rest_framework import generics, status
+from rest_framework import status
+
+from rest_framework.response import Response
+from rest_framework.parsers import (MultiPartParser, FormParser)
+from rest_framework import status, generics
 from rest_framework.permissions import IsAuthenticated
 
-class ContentListViewSet(ModelViewSet):
-    queryset = MainContent.objects.all()
-    serializer_class = MainContentSerializer
 
 
-class ProjectCreateApiView(generics.ListCreateAPIView):
+class ProjectCreateApiView(generics.CreateAPIView):
+    serializer_class = ProjectListCreateSerializer
     parser_classes = [MultiPartParser, FormParser]
+    permission_classes = [IsAuthenticated]
 
-    def post(self, request):
-        serializer = MainContentSerializer(data=request.data)
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            serializer.save(created_by=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-class ProjectCreateApiView(generics.CreateAPIView):
-    permission_classes= [IsAuthenticated]
-    parser_classes = [MultiPartParser, FormParser]
 
-    def post(self, request):
-        serializer = ProjectListCreateSerializer(data = request.data)
-        if serializer.is_valid():
-            serializer.save(created_by = request.user) #current user
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+# @api_view(['GET'])
+# def get_blogd(request, slug):
+#     blogd = MainContent.objects.get(slug=slug)
+#     serializer = MainContentSerializer(blogd)
+#     return Response(serializer.data)
+
+# class BlogListViewset(viewsets.ModelViewSet):
+#     queryset = MainContent.objects.all()
+#     serializer_class = MainContentSerializer
+
+
+# class BlogDeleteApiView(generics.DestroyAPIView):
+#     queryset = MainContent.objects.all()
+#     serializer_class=MainContentSerializer
