@@ -20,7 +20,7 @@
                     <label for="project-students" class="form-label">Active Students</label>
                     <input type="text" v-model="project.students" class="form-control" id="project-students">
                 </div>
-                <!-- <div class="my-4">
+                <div class="my-4">
                     <label for="status">Choose a status:</label>
 
                     <select v-model="project.status" name="status" id="status" class="mx-3">
@@ -29,7 +29,7 @@
 
                     </select>
 
-                </div> -->
+                </div>
                
                 <div class="mb-3">
                     <label for="project-img" class="form-label">Image</label>
