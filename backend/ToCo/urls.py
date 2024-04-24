@@ -8,6 +8,7 @@ router = routers.DefaultRouter()
 urlpatterns = [
     path("", include(router.urls)),
     path("addproject/", views.ProjectCreateApiView.as_view()),
+    path("projects/", views.ProjectListApiView.as_view()),
 ]
 
 urlpatterns += router.urls

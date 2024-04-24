@@ -10,7 +10,7 @@ class MainContent(models.Model):
     updated_at = models.DateField(auto_now=True)
     image = models.ImageField(upload_to='images/', blank=True, null=True)
     active_students = models.CharField(max_length=255, null=True)
-    is_project_active = models.BooleanField(default=True, null=True)
+    project_status = models.BooleanField(default=True, null=True)
 
     def __str__(self):
         return self.title

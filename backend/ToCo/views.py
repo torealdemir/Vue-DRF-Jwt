@@ -27,18 +27,7 @@ class ProjectCreateApiView(generics.CreateAPIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-
-# @api_view(['GET'])
-# def get_blogd(request, slug):
-#     blogd = MainContent.objects.get(slug=slug)
-#     serializer = MainContentSerializer(blogd)
-#     return Response(serializer.data)
-
-# class BlogListViewset(viewsets.ModelViewSet):
-#     queryset = MainContent.objects.all()
-#     serializer_class = MainContentSerializer
-
-
-# class BlogDeleteApiView(generics.DestroyAPIView):
-#     queryset = MainContent.objects.all()
-#     serializer_class=MainContentSerializer
+class ProjectListApiView(generics.ListAPIView):
+    queryset = MainContent.objects.all()
+    serializer_class = MainContentSerializer
+    
