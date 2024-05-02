@@ -227,7 +227,7 @@ export default {
         });
     },
     getImageUrl(imagePath){
-      return `http://localhost:8000/${imagePath}`
+      return `${imagePath}`
   },
   toggleTheme() {
     this.isDarkMode = event.target.checked;

@@ -9,11 +9,28 @@ class MainContentSerializer(serializers.ModelSerializer):
         model = MainContent
         fields = '__all__'
 
+        def getImage(self, MainContent):
+            if MainContent.image:
+                return MainContent.image.url
+            return None
+
+
 
 class ProjectListCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = MainContent
         fields = '__all__'
+
+    def to_internal_value(self, data):
+        file_data = data.get('image')
+
+        if file_data:
+            file_name = file_data.name
+            image = self.resize_image(file_data)
+            file_data = self.create_uploaded_file(image, file_name)
+            data['image'] = file_data
+
+        return super().to_internal_value(data)
 
     def resize_image(self, image):
         pil_image = Image.open(image)
