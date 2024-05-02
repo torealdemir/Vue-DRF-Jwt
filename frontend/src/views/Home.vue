@@ -19,7 +19,33 @@
 
 </div>
   
+<div class="container mb-5">
+    <div class="row gy-3">
+        <div class="col-md-12">
+            <div v-for="content in contents"
+                v-bind:key="content.id"
+                class="card card mb-3 mt-3 ">
+                    <div class="card-body mb-2">
+                        <div class="d-flex">
+                            <div class="w-50% h-50%">
+                                <img class="img-fluid img-thumbnail" :src="getImageUrl(content.image)" alt="Content Image">
+                                <h5 class="card-title">{{content.title}}</h5>
+                            </div>
+                        </div>
+                       
+                        <p class="card-text">{{content.short_description}}</p>
+                        <p ><strong>Created at:  {{ content.created_at }}</strong></p>
+                        
+                        
+                  
+                        <!-- <router-link :to="{name:'blogd', params:{slug:blog.id}}" class="ms-auto btn btn-primary">See More!</router-link> -->
+                        <button @click="deleteItem(blog.id)" class="btn btn-danger mx-4">Delete!</button>
+                    </div>
+            </div>
+        </div>
+    </div>
 
+</div>
 
 
 
@@ -140,7 +166,7 @@
 </div>
 </main>
 <footer class="bg-dark">
-  <div class="container py-4 text-center text-secondary"> // status:null,
+  <div class="container py-4 text-center text-secondary">
     <span>All Rights Reserved @Metu Engineering Section</span>
     <div class="row py-6 mt-3">
       <ul>
@@ -165,45 +191,54 @@
 import axios from 'axios';
 
 export default {
-name: 'Home',
-data() {
-  return {
-    contents: []
-  };
-},
-computed : {
+  name: 'Home',
+  data() {
+    return {
+      contents: []
+    };
+  },
+  computed: {
     isDarkMode: {
       get() {
-        return this.$store.state.isDarkMode
+        return this.$store.state.isDarkMode;
       },
-      set(value){
+      set(value) {
         this.$store.commit('setDarkMode', value);
       }
     }
   },
-methods: {
-  loadContent() {
-    const accessToken = localStorage.getItem('access');
-    const refreshToken = localStorage.getItem('refresh');
+  methods: {
+    loadContent() {
+      const accessToken = localStorage.getItem('access');
+      const refreshToken = localStorage.getItem('refresh');
 
-    axios
-      .get('/ToCo', {
-        headers: {
-          Authorization: `JWT ${accessToken}`
-        }
-      }) 
-      .then(response => {
-        console.log(response.data);
-        this.contents = response.data;
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  },
-  toggleTheme(){
-      this.isDarkMode = event.target.checked
+      axios
+        .get('/ToCo/projects/', {
+          headers: {
+            Authorization: `JWT ${accessToken}`
+          }
+        })
+        .then(response => {
+          console.log(response.data);
+          this.contents = response.data;
+        })
+        .catch(error => {
+          console.log(error);
+        });
     },
-}
+    getImageUrl(imagePath){
+      return `http://localhost:8000/${imagePath}`
+  },
+  toggleTheme() {
+    this.isDarkMode = event.target.checked;
+  },
+  
+},
+mounted() {
+    this.loadContent();
+},
+ 
+
 }
 </script>
 
