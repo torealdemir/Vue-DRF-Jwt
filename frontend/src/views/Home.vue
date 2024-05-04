@@ -31,7 +31,7 @@
     <div class="row gy-3">
         <div class="col-md-12">
             <div v-for="content in contents" v-bind:key="content.id" class="contentt card card mb-3 mt-3">
-                <div class="card-body mb-2">
+                <div class="card-body mb-2 mx-4">
                     <div class="row">
                         <div class="col-md-6">
                             <img class="img-fluid img-thumbnail" :src="getImageUrl(content.image)" alt="Content Image">
@@ -43,8 +43,8 @@
                           </div>
                         </div>    
                     </div>
-                    <p>{{content.content}}</p>
-                    <p><strong>Created at: {{ content.created_at }}</strong></p>
+                    <p class="mx-4">{{content.content}}</p>
+                    <p class="mx-4"><strong>Created at: {{ content.created_at }}</strong></p>
                     <div class="d-flex justify-content-center">
                         <button @click="deleteItem(content.id)" class="btn btn-danger">Delete!</button>
                     </div>
