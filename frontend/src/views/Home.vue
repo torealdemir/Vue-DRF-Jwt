@@ -1,7 +1,7 @@
 <template>
 
 <!-- Background image -->
-<div id="intro" class="bg-image shadow-2-strong">
+<div id="intro" class="bg-image shadow-2-strong" >
   <div class="position-relative">
     <img src="https://images.unsplash.com/photo-1569852741721-ee5a94bf719e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="mainImage img-fluid shadow-lg rounded shadow-img" alt="Fluid Image">
     <div class="position-absolute top-50 start-50 translate-middle">
@@ -10,47 +10,58 @@
         <h5 class="headers mb-4 text-secondary ">Nano Materials Field</h5>
       </div>
     </div>
-    <div class="cutter d-flex align-items-center justify-content-center" :class="{'bg-dark': isDarkMode, 'cutter': !isDarkMode}" >
-    <div class="cutterin" :class="{'bg-light': isDarkMode, 'bg-dark': !isDarkMode}">
-
-      </div>
-    </div>
   </div>
 
 </div>
-  
-<div class="container mb-5">
-    <div class="row gy-3">
-        <div class="col-md-12">
-            <div v-for="content in contents"
-                v-bind:key="content.id"
-                class="card card mb-3 mt-3 ">
-                    <div class="card-body mb-2">
-                        <div class="d-flex">
-                            <div class="w-50% h-50%">
-                                <img class="img-fluid img-thumbnail" :src="getImageUrl(content.image)" alt="Content Image">
-                                <h5 class="card-title">{{content.title}}</h5>
-                            </div>
-                        </div>
-                        <p>{{content.content}}</p>
-                        <p>{{ content.short_description }}</p>
-                        <p ><strong>Created at:  {{ content.created_at }}</strong></p>
-                        
-                        
-                  
-                        <!-- <router-link :to="{name:'blogd', params:{slug:blog.id}}" class="ms-auto btn btn-primary">See More!</router-link> -->
-                        <button @click="deleteItem(content.id)" class="btn btn-danger mx-4">Delete!</button>
-                    </div>
-            </div>
-        </div>
-    </div>
 
-</div>
+
+<!-- //--- -->
+
 
 
 
 <!--Main layout-->
 <main class="" :class="{'bg-dark' : isDarkMode,}">
+  <div class="cutter d-flex align-items-center justify-content-center" :class="{'bg-dark': isDarkMode, 'cutter': !isDarkMode}" >
+  <div class="cutterin" :class="{'bg-light': isDarkMode, 'bg-dark': !isDarkMode}">
+  </div>
+</div> 
+<div class="mb-5">
+
+    <div class="row gy-3">
+        <div class="col-md-12">
+            <div v-for="content in contents" v-bind:key="content.id" class="contentt card card mb-3 mt-3">
+                <div class="card-body mb-2">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img class="img-fluid img-thumbnail" :src="getImageUrl(content.image)" alt="Content Image">
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center">
+                          <div>
+                            <h1 class="card-title">{{content.title}}</h1>
+                            <h3>{{ content.short_description }}</h3>
+                          </div>
+                        </div>    
+                    </div>
+                    <p>{{content.content}}</p>
+                    <p><strong>Created at: {{ content.created_at }}</strong></p>
+                    <div class="d-flex justify-content-center">
+                        <button @click="deleteItem(content.id)" class="btn btn-danger">Delete!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="cutter d-flex align-items-center justify-content-center" :class="{'bg-dark': isDarkMode, 'cutter': !isDarkMode}" >
+    <div class="cutterin" :class="{'bg-light': isDarkMode, 'bg-dark': !isDarkMode}">
+    </div>
+</div>  
+
+
+
+
+
 <div class="container">
   <!--Section: Content-->
   <section>
@@ -80,9 +91,7 @@
             nesciunt laborum incidunt. Officia, quam consectetur. Earum eligendi aliquam illum
             alias, unde optio accusantium soluta, iusto molestiae adipisci et?
           </p>
-        </div>
-        
-        
+        </div>  
       </div>
     </div>
   </section>
@@ -279,5 +288,9 @@ background-color: rgb(252, 243, 243);
 
 li{
   list-style: none;
+}
+
+.contentt {
+  background-color: rgb(252, 243, 263);
 }
 </style>
