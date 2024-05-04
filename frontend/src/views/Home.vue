@@ -10,7 +10,7 @@
         <h5 class="headers mb-4 text-secondary ">Nano Materials Field</h5>
       </div>
     </div>
-    <div class="cutter d-flex align-items-center justify-content-center" :class="{'bg-dark': isDarkMode, 'bg-light': !isDarkMode}" >
+    <div class="cutter d-flex align-items-center justify-content-center" :class="{'bg-dark': isDarkMode, 'cutter': !isDarkMode}" >
     <div class="cutterin" :class="{'bg-light': isDarkMode, 'bg-dark': !isDarkMode}">
 
       </div>
@@ -88,7 +88,7 @@
   </section>
   <!--Section: Content-->
 
-  <div class="cutter d-flex align-items-center justify-content-center" :class="{'bg-dark': isDarkMode, 'bg-light': !isDarkMode}" >
+  <div class="cutter d-flex align-items-center justify-content-center" :class="{'bg-dark': isDarkMode, 'cutter': !isDarkMode}" >
     <div class="cutterin" :class="{'bg-light': isDarkMode, 'bg-dark': !isDarkMode}">
 
       </div>
@@ -158,7 +158,7 @@
   </section>
   <!--Section: Content-->
 
-  <div class="cutter d-flex align-items-center justify-content-center" :class="{'bg-dark': isDarkMode, 'bg-light': !isDarkMode}" >
+  <div class="cutter d-flex align-items-center justify-content-center" :class="{'bg-dark': isDarkMode, 'cutter': !isDarkMode}" >
     <div class="cutterin" :class="{'bg-light': isDarkMode, 'bg-dark': !isDarkMode}">
 
       </div>
@@ -268,11 +268,13 @@ filter: blur(4px);
 
 .cutter {
 height: 8vh;
+background-color:  rgb(252, 243, 243);
 }
 
 .cutterin{
 height: 0.03vh;
 width: 75vw;
+background-color: rgb(252, 243, 243);
 }
 
 li{

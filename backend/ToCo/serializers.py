@@ -38,7 +38,7 @@ class ProjectListCreateSerializer(serializers.ModelSerializer):
     def resize_image(self, image):
         pil_image = Image.open(image)
 
-        resized_image = pil_image.resize((250, 250)) 
+        resized_image = pil_image.resize((450, 580)) 
 
         output = BytesIO()
         resized_image.save(output, format='JPEG') 
