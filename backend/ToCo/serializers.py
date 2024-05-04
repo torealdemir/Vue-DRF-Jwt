@@ -14,7 +14,10 @@ class MainContentSerializer(serializers.ModelSerializer):
                 return MainContent.image.url
             return None
 
-
+class MainContentDeleteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MainContent
+        fields = '__all__'
 
 class ProjectListCreateSerializer(serializers.ModelSerializer):
     class Meta:

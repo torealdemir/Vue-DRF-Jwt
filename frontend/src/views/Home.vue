@@ -39,7 +39,7 @@
                         
                   
                         <!-- <router-link :to="{name:'blogd', params:{slug:blog.id}}" class="ms-auto btn btn-primary">See More!</router-link> -->
-                        <button @click="deleteItem(blog.id)" class="btn btn-danger mx-4">Delete!</button>
+                        <button @click="deleteItem(content.id)" class="btn btn-danger mx-4">Delete!</button>
                     </div>
             </div>
         </div>
@@ -213,7 +213,7 @@ export default {
       const refreshToken = localStorage.getItem('refresh');
 
       axios
-        .get('/ToCo/projects/', {
+        .get('/ToCo/', {
           headers: {
             Authorization: `JWT ${accessToken}`
           }
@@ -225,6 +225,15 @@ export default {
         .catch(error => {
           console.log(error);
         });
+    },
+    deleteItem(contentId){
+      axios
+          .delete(`/ToCo/${contentId}/`)
+          .then(response => {
+            console.log(response)
+          });
+          this.loadContent();
+          window.location.reload()
     },
     getImageUrl(imagePath){
       return `${imagePath}`

@@ -1,7 +1,7 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
-from .serializers import ProjectListCreateSerializer, MainContentSerializer
+from .serializers import ProjectListCreateSerializer, MainContentSerializer, MainContentDeleteSerializer
 
 from .models import MainContent
 
@@ -30,4 +30,13 @@ class ProjectCreateApiView(generics.CreateAPIView):
 class ProjectListApiView(generics.ListAPIView):
     queryset = MainContent.objects.all()
     serializer_class = MainContentSerializer
-    
+
+
+class BlogDeleteApiView(generics.DestroyAPIView):
+    queryset = MainContent.objects.all()
+    serializer_class = ProjectListCreateSerializer
+
+
+class ContentListViewSet(viewsets.ModelViewSet):
+    queryset = MainContent.objects.all()
+    serializer_class = MainContentDeleteSerializer
