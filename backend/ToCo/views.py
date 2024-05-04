@@ -15,26 +15,26 @@ from rest_framework.permissions import IsAuthenticated
 
 
 
-class ProjectCreateApiView(generics.CreateAPIView):
-    serializer_class = ProjectListCreateSerializer
-    parser_classes = [MultiPartParser, FormParser]
-    permission_classes = [IsAuthenticated]
+# class ProjectCreateApiView(generics.CreateAPIView):
+#     serializer_class = ProjectListCreateSerializer
+#     parser_classes = [MultiPartParser, FormParser]
+#     permission_classes = [IsAuthenticated]
 
-    def post(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save(created_by=request.user)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+#     def post(self, request, *args, **kwargs):
+#         serializer = self.get_serializer(data=request.data)
+#         if serializer.is_valid():
+#             serializer.save(created_by=request.user)
+#             return Response(serializer.data, status=status.HTTP_201_CREATED)
+#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-class ProjectListApiView(generics.ListAPIView):
-    queryset = MainContent.objects.all()
-    serializer_class = MainContentSerializer
+# class ProjectListApiView(generics.ListAPIView):
+#     queryset = MainContent.objects.all()
+#     serializer_class = MainContentSerializer
 
 
-class BlogDeleteApiView(generics.DestroyAPIView):
-    queryset = MainContent.objects.all()
-    serializer_class = ProjectListCreateSerializer
+# class BlogDeleteApiView(generics.DestroyAPIView):
+#     queryset = MainContent.objects.all()
+#     serializer_class = ProjectListCreateSerializer
 
 
 class ContentListViewSet(viewsets.ModelViewSet):

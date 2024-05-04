@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 class MainContent(models.Model):
     title = models.CharField(max_length=155)
     content = models.TextField()
+    short_description = models.CharField(max_length=100, null=True)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     created_at = models.DateField(auto_now_add=True,null=True)
     updated_at = models.DateField(auto_now=True)

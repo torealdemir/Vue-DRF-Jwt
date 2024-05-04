@@ -14,7 +14,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="short-description" class="form-label">Short Description</label>
-                    <input type="text" v-model="project.image" class="form-control" id="short-description">
+                    <input type="text" v-model="project.short_description" class="form-control" id="short-description">
                 </div>
                 <div class="mb-3">
                     <label for="project-students" class="form-label">Active Students</label>

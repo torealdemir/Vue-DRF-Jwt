@@ -32,8 +32,8 @@
                                 <h5 class="card-title">{{content.title}}</h5>
                             </div>
                         </div>
-                       
-                        <p class="card-text">{{content.short_description}}</p>
+                        <p>{{content.content}}</p>
+                        <p>{{ content.short_description }}</p>
                         <p ><strong>Created at:  {{ content.created_at }}</strong></p>
                         
                         

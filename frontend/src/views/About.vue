@@ -7,7 +7,6 @@
     </div>
 </div>
 
-
 <footer class="bg-dark">
   <div class="container py-4 text-center text-secondary">
     <span>All Rights Reserved @Metu Engineering Section</span>

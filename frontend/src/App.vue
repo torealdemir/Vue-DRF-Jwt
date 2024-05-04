@@ -38,7 +38,7 @@ export default {
     if(user){
       setInterval(()=>{
         this.getAccess()
-      }, 19900)
+      }, 29900)
     } else {
       this.$router.push('/')
     }
