@@ -18,13 +18,19 @@
             </form>
         </div>
     </div>
+<Footer class="fixed-bottom">
+</Footer>
 </template>
 
 <script>
 import axios from 'axios';
+import Footer from '@/components/Footer.vue'
 
 export default {
     name:'Login',
+    components: {
+        Footer,
+    },
 
     data(){
         return {
