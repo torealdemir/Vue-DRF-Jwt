@@ -1,9 +1,11 @@
 <template>
     <div>
         <h1>MyAccount</h1>
-        <Footer />
+        <h3>Account Owner: </h3>
+        
     </div>
-    
+    <Footer class="fixed-bottom">
+    </Footer>
 </template>
 
 <script>

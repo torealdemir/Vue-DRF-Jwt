@@ -8,10 +8,23 @@
                     <p>Adress:Odtu Engineering Section Material Engineering</p>
                     </li>
                     <li>
-                    <a href="#">Contact Us!</a>
+                    <a href='mailto:metuedu@xyz.com?subject=me&body=Hello!'>Contact us!</a>
                     </li>
                 </ul>            
             </div>
         </div>
     </footer>
 </template>
+<script>
+export default {
+    name: 'Footer',
+
+    methods: {
+        mailTo(){
+        window.location("mailto:xys@metuedu.com")
+        console.log('mail!')
+      }
+    }
+}
+
+</script>

@@ -78,7 +78,8 @@ export default {
 
       toggleTheme(){
         this.isDarkMode = event.target.checked
-      }
+      },
+      
     }
     
 }
