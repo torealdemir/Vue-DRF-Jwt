@@ -1,5 +1,5 @@
 <template>
-<div>
+<div :class="{'bg-dark' :isDarkMode,'bg-light' :!isDarkMode}">
     <div id="about">
     <div id="intro" class="bg-image shadow-2-strong">
         <div class="position-relative">
@@ -39,7 +39,7 @@
             </div>
         </div>
     </div>
-    <div class="row my-3">
+    <div class="row mb-4">
         <div class="col">
             <div class="card" style="width: 18rem;">
                 <img src="" class="card-img-top" alt="...">
@@ -91,8 +91,18 @@ export default{
     name:'About',
     components:{
       Footer
-    }
+    },
 
+    computed : {
+        isDarkMode : {
+        get(){
+            return this.$store.state.isDarkMode;
+        },
+        set(value){
+            this.$store.commit('setDarkMode', value);
+        }
+        }
+    }
     
 }
 </script>
